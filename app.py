@@ -48,7 +48,7 @@ def display():
     print(request)
     query= request.json
     query=str(query)
-    answer = chat_completion(messages=[user("Kayla is a Project Manager, contractor at DemoCo, 10 yrs exp. Beneil is a Project Manager experience 20 years and is not a contractor. Miesha is a Diversity and Inclusiveness Researcher with 10 years of work experience and is a permanent employee at DemoCo. Israel has 20 years of experience as a Diversity and Inclusiveness Researcher. He works at SubCo. Subco is a subcontractor to DemoCo."),
+    answer = chat_completion(messages=[user("Kayla is a Project Manager, contractor at DemoCo, 10 yrs exp. Beneil is a Project Manager experience 20 years and is not a contractor. Miesha is a Diversity and Inclusiveness Researcher with 10 years of work experience and is a permanent employee at DemoCo. Miesha is not a contractor. Israel has 20 years of experience as a Diversity and Inclusiveness Researcher. He works at SubCo. Subco is a subcontractor to DemoCo."),
     assistant("OK, now ask the questions"),
     user(query+"answer in least words"),])
     print(answer)
