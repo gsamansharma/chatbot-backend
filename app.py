@@ -33,11 +33,9 @@ def chat_completion(
 # on the terminal type: curl http://127.0.0.1:5000/
 # returns hello world when we use GET.
 # returns the data that we send when we use POST.
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET'])
 def home():
-	if(request.method == 'GET'):
-		data = "hello world"
-		return jsonify({'data': data})
+	return 'Open <A href="https://chatbot-frontend-mu.vercel.app">https://chatbot-frontend-mu.vercel.app</A>'
 
 # A simple function to calculate the square of a number
 # the number to be squared is sent in the URL when we use GET
@@ -48,7 +46,7 @@ def display():
     print(request)
     query= request.json
     query=str(query)
-    answer = chat_completion(messages=[user("Kayla is a Project Manager, contractor at DemoCo, 10 yrs exp. Beneil is a Project Manager experience 20 years and is not a contractor. Miesha is a Diversity and Inclusiveness Researcher with 10 years of work experience and is a permanent employee at DemoCo. Miesha is not a contractor. Israel has 20 years of experience as a Diversity and Inclusiveness Researcher. He works at SubCo. Subco is a subcontractor to DemoCo."),
+    answer = chat_completion(messages=[user("Kayla is a Project Manager and contractor at DemoCo with 10 years of experience. Beneil is a Project Manager with 20 years of experience and is a permanent employee, not a contractor. Miesha is a Diversity and Inclusiveness Researcher with exactly 10 years of experience and is a permanent employee at DemoCo, not a contractor. Israel is a Diversity and Inclusiveness Researcher with 20 years of experience. He works at SubCo, which is a subcontractor to DemoCo. No project manager and contractor has more than 10 years of experience"),
     assistant("OK, now ask the questions"),
     user(query+"answer in least words"),])
     print(answer)
